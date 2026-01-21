@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Step Montessori | We Nurture Your Dreams</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="logo.png" fetchpriority="high">
+    <link rel="preload" as="image" href="images/image1.jpg" fetchpriority="high">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <div class="logo"><a href="index.html"><img src="logo.png" alt="First Step Montessori" class="logo-img" loading="eager" fetchpriority="high" decoding="async"></a></div>
+            <h1>First Step Montessori</h1>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu-overlay"></div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="bounce">We Nurture Your Dreams!</h1>
+            <p>A safe space for your little ones to grow, imagine, and create.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape circle"></div>
+            <div class="shape square"></div>
+            <div class="shape triangle"></div>
+        </div>
+    </header>
+
+    <section id="activities" class="info">
+        <h2>Our Fun Activities</h2>
+        <div class="cards">
+            <div class="card purple"><h3>Art & Crafts</h3><p>Expressing colors.</p></div>
+            <div class="card orange"><h3>Story Time</h3><p>Building imagination.</p></div>
+            <div class="card green"><h3>Outdoor Play</h3><p>Happy minds!</p></div>
+        </div>
+    </section>
+
+    <section id="tour" class="video-tour">
+        <div class="video-wrapper">
+            <h2>Take a Virtual Tour! 🎥</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/J4ZDHDwvFwI" title="Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-decor">✨ 🌈 🎈</div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-wrapper">
+            <button class="gallery-nav gallery-prev" aria-label="Previous photo">‹</button>
+            <div class="polaroid-container" id="galleryContainer">
+                <!-- Images will be dynamically loaded here -->
+            </div>
+            <button class="gallery-nav gallery-next" aria-label="Next photo">›</button>
+            <div class="gallery-dots" id="galleryDots">
+                <!-- Dots will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal for Enlarged Images -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <button class="modal-nav modal-prev" aria-label="Previous image">‹</button>
+        <button class="modal-nav modal-next" aria-label="Next image">›</button>
+        <img class="modal-image" id="modalImage" src="" alt="Enlarged gallery image">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <section class="testimonials-section">
+        <h2>What Parents Say 💬</h2>
+        <div class="testimonials-wrapper">
+            <button class="testimonials-nav testimonials-prev" aria-label="Previous testimonial">‹</button>
+            <div class="testimonials-container">
+                <div class="testimonial-card active">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"First Step Montessori has been a blessing for our family. The teachers are caring, and our child has grown so much in confidence and independence!"</p>
+                    <div class="testimonial-author">
+                        <strong>- Priya M., Parent</strong>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The Montessori approach here is authentic and well-implemented. Our daughter loves going to school every day!"</p>
+                    <div class="testimonial-author">
+                        <strong>- Rajesh K., Parent</strong>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Amazing facilities and wonderful teachers. The school truly nurtures each child's unique potential. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <strong>- Anjali S., Parent</strong>
+                    </div>
+                </div>
+            </div>
+            <button class="testimonials-nav testimonials-next" aria-label="Next testimonial">›</button>
+            <div class="testimonials-dots">
+                <span class="testimonial-dot active" data-slide="0"></span>
+                <span class="testimonial-dot" data-slide="1"></span>
+                <span class="testimonial-dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="enroll" class="checklist-section">
+        <div class="checklist-card">
+            <h2>Enrollment Checklist 🎒</h2>
+            <div class="checklist-items">
+                <label class="check-container"><input type="checkbox"><span class="checkmark"></span> Schedule a School Visit</label>
+                <label class="check-container"><input type="checkbox"><span class="checkmark"></span> Fill out the Form</label>
+                <label class="check-container"><input type="checkbox"><span class="checkmark"></span> Vaccination Records</label>
+            </div>
+            <button class="btn">Download PDF 📥</button>
+        </div>
+    </section>
+
+    <section class="quick-links-section">
+        <h2>Quick Links 🔗</h2>
+        <div class="quick-links-container">
+            <a href="programs.html" class="quick-link-card">
+                <div class="quick-link-icon">📚</div>
+                <h3>Programs</h3>
+                <p>Explore our curriculum</p>
+            </a>
+            <a href="admission.html" class="quick-link-card">
+                <div class="quick-link-icon">📝</div>
+                <h3>Admission</h3>
+                <p>Start your journey</p>
+            </a>
+            <a href="resources.html" class="quick-link-card">
+                <div class="quick-link-icon">📖</div>
+                <h3>Resources</h3>
+                <p>Parent resources</p>
+            </a>
+            <a href="contact.html" class="quick-link-card">
+                <div class="quick-link-icon">📞</div>
+                <h3>Contact</h3>
+                <p>Get in touch</p>
+            </a>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-logo"><img src="logo.png" alt="First Step Montessori" class="footer-logo-img" loading="lazy" decoding="async"></div>
+        <p>First Step Montessori, Mysore</p>
+        <p>#316, Brindavan Extension, 1st stage, Mysore - 570020</p>
+        <p>Contact: <a href="tel:7026933851" class="footer-link">7026933851</a></p>
+        <p class="copyright">&copy; 2026 First Step Montessori.</p>
+    </footer>
+
+    <div class="fixed-buttons">
+        <button id="rocketBtn" onclick="scrollToTop()">🚀</button>
+        <a href="https://wa.me/917026933851" target="_blank" id="whatsappBtn" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const rocket = document.getElementById('rocketBtn');
+            rocket.style.animation = "blastOff 0.6s ease-in forwards";
+            setTimeout(() => { rocket.style.animation = "none"; }, 1000);
+        }
+        
+        // WhatsApp button animation
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', function() {
+                this.style.animation = "whatsappBounce 0.5s ease-in-out";
+                setTimeout(() => { 
+                    this.style.animation = "whatsappPulse 2s ease-in-out infinite"; 
+                }, 500);
+            });
+        }
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        
+        function toggleMenu() {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        }
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', toggleMenu);
+            
+            if (menuOverlay) {
+                menuOverlay.addEventListener('click', closeMenu);
+            }
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+        
+        // Gallery - Direct Image Loading (Optimized for GitHub Pages)
+        // Use known image list instead of slow discovery process
+        const polaroidColors = ['p-yellow', 'p-blue', 'p-pink', 'p-green', 'p-purple', 'p-orange'];
+        
+        // Known gallery images - update this list if you add more images
+        const knownGalleryImages = ['image1.jpg', 'image2.jpg', 'image3.jpg'];
+        
+        let currentSlide = 0;
+        let slides = [];
+        let dots = [];
+        let galleryImages = [];
+        let autoPlayInterval = null;
+        const prevBtn = document.querySelector('.gallery-prev');
+        const nextBtn = document.querySelector('.gallery-next');
+        const galleryContainer = document.getElementById('galleryContainer');
+        const galleryDots = document.getElementById('galleryDots');
+        
+        function showSlide(index) {
+            if (slides.length === 0) return;
+            
+            // Wrap around if out of bounds
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            
+            // Update slides
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+            
+            // Preload next image for smoother transition
+            const nextIndex = (currentSlide + 1) % galleryImages.length;
+            if (galleryImages[nextIndex]) {
+                const nextImg = new Image();
+                nextImg.src = `images/${galleryImages[nextIndex]}`;
+            }
+        }
+        
+        // Auto-play slideshow
+        function startAutoPlay() {
+            if (slides.length <= 1) return; // Don't auto-play if only one or no images
+            stopAutoPlay(); // Clear any existing interval
+            autoPlayInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 4000); // Change slide every 4 seconds
+        }
+        
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        }
+        
+        // Optimized: Use known images directly instead of slow discovery
+        async function loadGalleryImages() {
+            // Filter out images that don't exist (optional validation)
+            const validImages = [];
+            for (const imageName of knownGalleryImages) {
+                const img = new Image();
+                await new Promise((resolve) => {
+                    img.onload = () => {
+                        validImages.push(imageName);
+                        resolve();
+                    };
+                    img.onerror = () => resolve(); // Skip if image doesn't exist
+                    img.src = `images/${imageName}`;
+                });
+            }
+            return validImages.length > 0 ? validImages : knownGalleryImages; // Fallback to known list
+        }
+        
+        // Function to generate gallery from images array
+        function generateGallery() {
+            if (galleryImages.length === 0) {
+                // If no images, show placeholder
+                galleryContainer.innerHTML = '<div class="polaroid p-yellow active"><div class="photo-placeholder">📷</div><p>No images found in gallery</p></div>';
+                slides = document.querySelectorAll('.polaroid');
+                return;
+            }
+            
+            // Clear existing content
+            galleryContainer.innerHTML = '';
+            galleryDots.innerHTML = '';
+            
+            // Generate polaroid elements for each image
+            galleryImages.forEach((imageName, index) => {
+                const polaroid = document.createElement('div');
+                const colorClass = polaroidColors[index % polaroidColors.length];
+                polaroid.className = `polaroid ${colorClass} ${index === 0 ? 'active' : ''}`;
+                
+                // Create image element with optimized loading
+                const img = document.createElement('img');
+                img.src = `images/${imageName}`;
+                img.alt = `Gallery image ${index + 1}`;
+                img.dataset.index = index;
+                img.dataset.imageName = imageName;
+                img.decoding = 'async'; // Decode asynchronously for better performance
+                
+                // Optimize loading: eager for first image, lazy for others
+                if (index === 0) {
+                    img.loading = 'eager';
+                    img.fetchPriority = 'high';
+                } else {
+                    img.loading = 'lazy';
+                }
+                
+                // Make image clickable to open in modal (desktop only)
+                img.addEventListener('click', () => {
+                    // Check if mobile device
+                    if (window.innerWidth <= 768) {
+                        return; // Don't open modal on mobile
+                    }
+                    openImageModal(index);
+                });
+                
+                // Handle image load error
+                img.onerror = function() {
+                    this.style.display = 'none';
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'photo-placeholder';
+                    placeholder.textContent = '📷';
+                    this.parentNode.insertBefore(placeholder, this);
+                };
+                
+                polaroid.appendChild(img);
+                galleryContainer.appendChild(polaroid);
+                
+                // Create dot for navigation
+                const dot = document.createElement('span');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.setAttribute('data-slide', index);
+                dot.addEventListener('click', () => {
+                    stopAutoPlay();
+                    showSlide(index);
+                    startAutoPlay(); // Restart after manual navigation
+                });
+                galleryDots.appendChild(dot);
+            });
+            
+            // Update slides and dots references
+            slides = document.querySelectorAll('.polaroid');
+            dots = document.querySelectorAll('.dot');
+            
+            // Start auto-play after gallery is generated
+            startAutoPlay();
+        }
+        
+        // Initialize: Load images directly (much faster)
+        function initGallery() {
+            // Use known images immediately - no async delay
+            galleryImages = knownGalleryImages;
+            generateGallery();
+        }
+        
+        // Attach button event listeners (only once, buttons are static)
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                stopAutoPlay();
+                showSlide(currentSlide - 1);
+                startAutoPlay(); // Restart after manual navigation
+            });
+            nextBtn.addEventListener('click', () => {
+                stopAutoPlay();
+                showSlide(currentSlide + 1);
+                startAutoPlay(); // Restart after manual navigation
+            });
+        }
+        
+        // Pause auto-play on hover, resume on mouse leave
+        if (galleryContainer) {
+            galleryContainer.addEventListener('mouseenter', stopAutoPlay);
+            galleryContainer.addEventListener('mouseleave', startAutoPlay);
+        }
+        
+        // Image Modal/Lightbox functionality
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const modalClose = document.querySelector('.modal-close');
+        const modalPrev = document.querySelector('.modal-prev');
+        const modalNext = document.querySelector('.modal-next');
+        let currentModalIndex = 0;
+        
+        function openImageModal(index) {
+            // Don't open modal on mobile devices
+            if (window.innerWidth <= 768) {
+                return;
+            }
+            if (galleryImages.length === 0) return;
+            currentModalIndex = index;
+            updateModalImage();
+            imageModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            stopAutoPlay();
+        }
+        
+        function closeImageModal() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            startAutoPlay();
+        }
+        
+        function updateModalImage() {
+            if (galleryImages.length === 0) return;
+            const imageName = galleryImages[currentModalIndex];
+            modalImage.src = `images/${imageName}`;
+            modalCaption.textContent = '';
+        }
+        
+        function showNextModalImage() {
+            if (galleryImages.length === 0) return;
+            currentModalIndex = (currentModalIndex + 1) % galleryImages.length;
+            updateModalImage();
+        }
+        
+        function showPrevModalImage() {
+            if (galleryImages.length === 0) return;
+            currentModalIndex = (currentModalIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateModalImage();
+        }
+        
+        // Modal event listeners
+        if (modalClose) {
+            modalClose.addEventListener('click', closeImageModal);
+        }
+        
+        if (modalNext) {
+            modalNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showNextModalImage();
+            });
+        }
+        
+        if (modalPrev) {
+            modalPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showPrevModalImage();
+            });
+        }
+        
+        // Close modal when clicking on background
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeImageModal();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (imageModal.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closeImageModal();
+                } else if (e.key === 'ArrowRight') {
+                    showNextModalImage();
+                } else if (e.key === 'ArrowLeft') {
+                    showPrevModalImage();
+                }
+            }
+        });
+        
+        // Initialize gallery on page load - automatically discover images
+        initGallery();
+        
+        // Testimonials Carousel
+        let currentTestimonial = 0;
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const testimonialsPrev = document.querySelector('.testimonials-prev');
+        const testimonialsNext = document.querySelector('.testimonials-next');
+        let testimonialsAutoPlayInterval = null;
+        
+        function showTestimonial(index) {
+            if (testimonialCards.length === 0) return;
+            
+            // Wrap around if out of bounds
+            if (index >= testimonialCards.length) {
+                currentTestimonial = 0;
+            } else if (index < 0) {
+                currentTestimonial = testimonialCards.length - 1;
+            } else {
+                currentTestimonial = index;
+            }
+            
+            // Update cards
+            testimonialCards.forEach((card, i) => {
+                card.classList.toggle('active', i === currentTestimonial);
+            });
+            
+            // Update dots
+            testimonialDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentTestimonial);
+            });
+        }
+        
+        function startTestimonialsAutoPlay() {
+            if (testimonialCards.length <= 1) return;
+            stopTestimonialsAutoPlay();
+            testimonialsAutoPlayInterval = setInterval(() => {
+                showTestimonial(currentTestimonial + 1);
+            }, 5000); // Change testimonial every 5 seconds
+        }
+        
+        function stopTestimonialsAutoPlay() {
+            if (testimonialsAutoPlayInterval) {
+                clearInterval(testimonialsAutoPlayInterval);
+                testimonialsAutoPlayInterval = null;
+            }
+        }
+        
+        // Attach event listeners
+        if (testimonialsPrev) {
+            testimonialsPrev.addEventListener('click', () => {
+                stopTestimonialsAutoPlay();
+                showTestimonial(currentTestimonial - 1);
+                startTestimonialsAutoPlay();
+            });
+        }
+        
+        if (testimonialsNext) {
+            testimonialsNext.addEventListener('click', () => {
+                stopTestimonialsAutoPlay();
+                showTestimonial(currentTestimonial + 1);
+                startTestimonialsAutoPlay();
+            });
+        }
+        
+        // Dot navigation
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopTestimonialsAutoPlay();
+                showTestimonial(index);
+                startTestimonialsAutoPlay();
+            });
+        });
+        
+        // Pause auto-play on hover, resume on mouse leave
+        const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+        if (testimonialsWrapper) {
+            testimonialsWrapper.addEventListener('mouseenter', stopTestimonialsAutoPlay);
+            testimonialsWrapper.addEventListener('mouseleave', startTestimonialsAutoPlay);
+        }
+        
+        // Start auto-play
+        startTestimonialsAutoPlay();
+    </script>
+</body>
+</html>
