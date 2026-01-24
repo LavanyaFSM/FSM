@@ -213,8 +213,9 @@
     }
     .polaroid img {
         width: 100%;
-        max-width: 280px;
-        height: 180px;
+        max-width: 100%;
+        height: auto;
+        min-height: 220px;
         object-fit: cover;
         border-radius: 20px;
         display: block;
@@ -232,20 +233,7 @@
         height: 180px !important;
         margin: 0 auto !important;
     }
-    /* Hide image modal on mobile */
-    .image-modal {
-        display: none !important;
-    }
-    .image-modal.active {
-        display: none !important;
-    }
-    .polaroid img {
-        cursor: default !important;
-        pointer-events: none !important;
-    }
-    .polaroid img:active {
-        transform: none !important;
-    }
+    /* Allow image modal on mobile and keep tap-to-open behavior */
     
     /* About Page Mobile Styles */
     .about-container h2,

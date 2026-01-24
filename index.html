@@ -375,12 +375,8 @@
                     img.loading = 'lazy';
                 }
                 
-                // Make image clickable to open in modal (desktop only)
+                // Make image clickable to open in modal (all devices)
                 img.addEventListener('click', () => {
-                    // Check if mobile device
-                    if (window.innerWidth <= 768) {
-                        return; // Don't open modal on mobile
-                    }
                     openImageModal(index);
                 });
                 
@@ -453,10 +449,6 @@
         let currentModalIndex = 0;
         
         function openImageModal(index) {
-            // Don't open modal on mobile devices
-            if (window.innerWidth <= 768) {
-                return;
-            }
             if (galleryImages.length === 0) return;
             currentModalIndex = index;
             updateModalImage();
