@@ -433,10 +433,37 @@
             });
         }
         
-        // Pause auto-play on hover, resume on mouse leave
+        // Pause auto-play on hover, resume on mouse leave (desktop)
         if (galleryContainer) {
             galleryContainer.addEventListener('mouseenter', stopAutoPlay);
             galleryContainer.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // Touch swipe navigation for gallery (mobile)
+        if (galleryContainer) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            galleryContainer.addEventListener('touchstart', (e) => {
+                if (!e.changedTouches || e.changedTouches.length === 0) return;
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+
+            galleryContainer.addEventListener('touchend', (e) => {
+                if (!e.changedTouches || e.changedTouches.length === 0) return;
+                touchEndX = e.changedTouches[0].clientX;
+                const diffX = touchEndX - touchStartX;
+                const threshold = 40; // minimum swipe distance in px
+                if (Math.abs(diffX) < threshold) return;
+
+                stopAutoPlay();
+                if (diffX < 0) {
+                    showSlide(currentSlide + 1); // swipe left -> next
+                } else {
+                    showSlide(currentSlide - 1); // swipe right -> previous
+                }
+                startAutoPlay();
+            }, { passive: true });
         }
         
         // Image Modal/Lightbox functionality

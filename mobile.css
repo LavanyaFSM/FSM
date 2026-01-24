@@ -184,8 +184,14 @@
     .gallery-wrapper {
         position: relative;
         width: 100%;
-        max-width: 400px;
+        max-width: 360px;
         margin: 0 auto;
+        padding: 5px 0;
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        grid-template-rows: auto auto auto;
+        align-items: center;
+        row-gap: 8px;
     }
     .polaroid-container {
         position: relative;
@@ -193,6 +199,8 @@
         overflow: hidden;
         display: block;
         min-height: 200px;
+        grid-column: 1 / 4;
+        grid-row: 1;
     }
     .polaroid {
         width: 100%;
@@ -311,47 +319,23 @@
         font-size: 1rem !important;
         padding: 0 10px !important;
     }
+    /* Hide gallery arrow buttons on mobile - swipe is enough */
     .gallery-nav {
-        display: flex !important;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 2rem;
-        cursor: pointer;
-        z-index: 10;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-        color: var(--text);
-        font-weight: bold;
-        line-height: 1;
-    }
-    .gallery-nav:active {
-        background: var(--secondary);
-        color: white;
-        transform: translateY(-50%) scale(1.1);
-    }
-    .gallery-prev {
-        left: 10px;
-    }
-    .gallery-next {
-        right: 10px;
+        display: none !important;
     }
     .gallery-dots {
         display: flex !important;
         justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
+        gap: 8px;
+        margin-top: 4px;
+        padding: 0;
+        background: transparent;
+        grid-column: 1 / 4;
+        grid-row: 3;
     }
     .dot {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: #ccc;
         cursor: pointer;
@@ -359,7 +343,7 @@
     }
     .dot.active {
         background: var(--secondary);
-        transform: scale(1.2);
+        transform: scale(1.25);
     }
     
     /* Checklist */
