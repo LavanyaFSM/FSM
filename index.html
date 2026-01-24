@@ -547,6 +547,31 @@
                 }
             }
         });
+
+        // Touch swipe navigation in modal (mobile)
+        if (modalImage) {
+            let modalTouchStartX = 0;
+            let modalTouchEndX = 0;
+
+            modalImage.addEventListener('touchstart', (e) => {
+                if (!e.changedTouches || e.changedTouches.length === 0) return;
+                modalTouchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+
+            modalImage.addEventListener('touchend', (e) => {
+                if (!e.changedTouches || e.changedTouches.length === 0) return;
+                modalTouchEndX = e.changedTouches[0].clientX;
+                const diffX = modalTouchEndX - modalTouchStartX;
+                const threshold = 40; // minimum swipe distance in px
+                if (Math.abs(diffX) < threshold) return;
+
+                if (diffX < 0) {
+                    showNextModalImage(); // swipe left -> next
+                } else {
+                    showPrevModalImage(); // swipe right -> previous
+                }
+            }, { passive: true });
+        }
         
         // Initialize gallery on page load - automatically discover images
         initGallery();

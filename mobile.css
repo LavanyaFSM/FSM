@@ -186,12 +186,15 @@
         width: 100%;
         max-width: 360px;
         margin: 0 auto;
-        padding: 5px 0;
+        padding: 0; /* remove inner white padding */
         display: grid;
-        grid-template-columns: 40px 1fr 40px;
-        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
         align-items: center;
-        row-gap: 8px;
+        row-gap: 6px;
+        background: transparent;     /* no extra white card */
+        box-shadow: none;
+        border-radius: 0;
     }
     .polaroid-container {
         position: relative;
@@ -200,8 +203,12 @@
         display: block;
         height: 220px;           /* fixed frame height */
         min-height: 220px;
-        grid-column: 1 / 4;
+        grid-column: 1;
         grid-row: 1;
+        background: transparent; /* remove white background */
+        padding: 0;
+        border-radius: 16px;
+        box-shadow: none;
     }
     .polaroid {
         width: 100%;
@@ -225,9 +232,9 @@
         max-width: 100%;
         height: 100%;            /* fixed inside the frame */
         object-fit: cover;
-        border-radius: 20px;
+        border-radius: 16px;
         display: block;
-        margin: 0 auto;
+        margin: 0;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -318,6 +325,10 @@
     .teachers-intro {
         font-size: 1rem !important;
         padding: 0 10px !important;
+    }
+    /* Hide modal next/prev arrows on mobile - swipe on image instead */
+    .modal-nav {
+        display: none !important;
     }
     /* Hide gallery arrow buttons on mobile - swipe is enough */
     .gallery-nav {
