@@ -198,7 +198,8 @@
         width: 100%;
         overflow: hidden;
         display: block;
-        min-height: 200px;
+        height: 220px;           /* fixed frame height */
+        min-height: 220px;
         grid-column: 1 / 4;
         grid-row: 1;
     }
@@ -222,8 +223,7 @@
     .polaroid img {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        min-height: 220px;
+        height: 100%;            /* fixed inside the frame */
         object-fit: cover;
         border-radius: 20px;
         display: block;
